@@ -98,7 +98,7 @@
     }
     
     #dialects {
-    	background-color: #522c8a;
+    	/*background-color: #522c8a;*/
     }
     
     #learn {
@@ -326,7 +326,7 @@
   <span>Sizhia</span>
   <span>...</span>
   </p>
-  <p id="translated" style="font-size: 30px;">ee</p>
+  <p id="translated" style="font-size: 30px; width: 400px;">Kishaala, Kishaala Zalawagaiy Sizhia [ni/de]... </p>
   <!--<span>you</span>
   <span>place</span>
   <span>on</span>
@@ -335,8 +335,8 @@
   <span>thinking.</span>-->
   <span style="font-size: 30px; font-weight: normal;">
   	<p class="totranslate">The empire of Kiy was born, and with it, came Kiywolo.</p>
-    <p id="translated">ee</p>
-    <p class="totranslate">Spoken within the Kingdom of Kiy, Kingdom of Zakhiy, Kingdom of Lashikiy, and the Ziy Region, Kiywolo is the official language throughout the land</p>
+    <p id="translated" style="width: 400px;">Kiy ikishalo, y [with it] i'alo Kiywolo.</p>
+    <p class="totranslate">Spoken within the Kingdom of Kiy, Kingdom of Zakhiy, Kingdom of Lashikiy, and the Ziy Region, Kiywolo is the official language throughout the land.</p>
     <p id="translated">ee</p>
     <p class="totranslate">It was created by Ki, the god-emperor and unifier of the empire.</p>
     <p id="translated">ee</p>
@@ -345,8 +345,8 @@
     <p class="totranslate">The standard dialect taught is Kisha Kiywolo, or "Old Kiywolo".</p>
     <p id="translated">ee</p>
     
-    <p>Click on each sentence above to see the Kiywolo translation!</p>
-    <p>Next: Dialects</p>
+    <p style="font-style: italic; font-size: 25px;">Click on each sentence above to see the Kiywolo translation!</p>
+    <p style="font-style: italic; font-size: 25px;">Next: Dialects</p>
   </span>
 </h4>
 </section>
@@ -458,14 +458,6 @@ span:nth-child(18) {
 `
 $(document).ready(function() {
 	$("h4").hide();
-	
-    /*$("#totranslate" ).each(function() {
-    	$(this).on("click", function(){
-        	//$(this).next().stop(true, true);
-            alert($(this).next().text());
-    		$(this).next().slideToggle();
-        });
-    });*/
     
     $(".totranslate").click(function() {
     	$(this).next().stop(true, true);
