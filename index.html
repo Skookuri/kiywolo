@@ -1,38 +1,299 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Home</title>
 <style>
 	body {
-    text-align: center;
-    background-color: #203c34;
-    color: white;
-    left: 50%;
-    position: fixed;
-    transform: translate(-50%, 100%);
+    	background-color: white;
+    	color: #203c34;
+    }
+    
+    .content {
+    	text-align: center;
+    	left: 50%;
+    	transform: translate(0%, 50%);
     }
     
     
-body {
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
+	.default {
+    	animation: fadeInAnimation ease 3s;
+    	animation-iteration-count: 1;
+    	animation-fill-mode: forwards;
+	}
   
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
+	@keyframes fadeInAnimation {
+    	0% {
+        	opacity: 0;
+    	}
+        
+    	100% {
+        	opacity: 1;
+     	}
+	}
+    
+    a {
+    	color: #203c34;
     }
-    100% {
-        opacity: 1;
-     }
+    
+    .topBar {
+    	padding: 20px;
+    	text-align: center;
+    	font-size: 25px;
+    	color: #ffffff;
+	}
+    
+    a {
+    	padding: 10px;
+    }
+
+	.topBar a:hover {
+    	color: #522c8a;
+    	transition: 0.4s;
+        text-shadow: 0 0 30px #ffff;
+	}
+      
+	.topBar a.active {
+    	color: #522c8a;
+        text-shadow: 0 0 30px #ffff;
+	}
+    
+    #kiywolo:hover {
+    	color: #ffcb21;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    #english {
+    	display: none;
+        color: #ffcb21;
+        font-style: italic;
+        padding: 10px;
+        background-color: #203c34;
+        border-radius: 67px 67px 67px 67px;
+		-webkit-border-radius: 67px 67px 67px 67px;
+		-moz-border-radius: 67px 67px 67px 67px;
+        box-shadow: -3px 10px 33px -21px rgba(0,0,0,0.9) inset;
+		-webkit-box-shadow: -3px 10px 33px -21px rgba(0,0,0,0.9) inset;
+		-moz-box-shadow: -3px 10px 33px -21px rgba(0,0,0,0.9) inset;
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    
+    
+    *, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+
+.mouse_scroll {
+	display: block;
+	margin: 0 auto;
+	width: 24px;
+	height: 100px;
+	margin-top: 125px;
+}
+
+
+.m_scroll_arrows
+{
+  display: block;
+  width: 5px;
+  height: 5px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+   
+  border-right: 2px solid #203c34;
+  border-bottom: 2px solid #203c34;
+  margin: 0 0 3px 4px;
+  
+  width: 16px;
+  height: 16px;
+}
+
+
+.unu
+{
+  margin-top: 1px;
+}
+
+.unu, .doi, .trei
+{
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+    animation: mouse-scroll 1s infinite;
+  
+}
+
+.unu
+{
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s;
+  -webkit-animation-direction: alternate;
+  
+  animation-direction: alternate;
+  animation-delay: alternate;
+}
+
+.doi
+{
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -webkit-animation-direction: alternate;
+  
+  animation-delay: .2s;
+  animation-direction: alternate;
+  
+  margin-top: -6px;
+}
+
+.trei
+{
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  -webkit-animation-direction: alternate;
+  
+  animation-delay: .3s;
+  animation-direction: alternate;
+  
+  
+  margin-top: -6px;
+}
+
+.mouse {
+  height: 42px;
+  width: 24px;
+  border-radius: 14px;
+  transform: none;
+  border: 2px solid #203c34;
+  top: 170px;
+}
+
+.wheel {
+  height: 5px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: white;
+  position: relative;
+  
+  height: 4px;
+  width: 4px;
+  border: 2px solid #203c34;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+}
+
+.wheel {
+  -webkit-animation: mouse-wheel 0.6s linear infinite;
+  -moz-animation: mouse-wheel 0.6s linear infinite;
+  animation: mouse-wheel 0.6s linear infinite;
+}
+
+@-webkit-keyframes mouse-wheel{
+   0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+@-moz-keyframes mouse-wheel {
+  0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@-o-keyframes mouse-wheel {
+
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@keyframes mouse-wheel {
+
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+
+@-webkit-keyframes mouse-scroll {
+
+  0%   { opacity: 0;}
+  50%  { opacity: .5;}
+  100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
 }
 </style>
 </head>
 <body>
+<h2>
+<div class="topBar">
+	<a href= "home.html" style="text-decoration: none; font-size: 50px;" class = "page" >Kiywolo</a>
+    <a href= "home.html" style="text-decoration: none;" class = "page active" >Home</a>
+	<a href= "history.html" style="text-decoration: none;" class = "page" >History</a>
+	<a href= "dialects.html" style="text-decoration: none;" class = "page" >Dialects</a>
+	<a href= "learn.html" style="text-decoration: none;" class = "page" >Learn</a>
+	<a href= "team.html" style="text-decoration: none;" class = "page" >Team</a>
+</div>
+</h2>
 
-<h1 style="background-color: #522c8a; color: white; font-size: 100px;">Welawaki!</h1>
-<p>Welcome to Kiy.</p>
+<div class="greeting">
+<h1 style="font-size: 100px;" class="content default" id="kiywolo">Welawaki!</h1>
+<h1 class="content" id="english">Hello!</h1>
+</div>
+<h2 style="font-size: 40px;" class="content default">Welcome to Kiy.</h2>
 
+<div class="mouse_scroll default">
+
+		<div class="mouse">
+			<div class="wheel"></div>
+		</div>
+		<div>
+			<span class="m_scroll_arrows unu"></span>
+			<span class="m_scroll_arrows doi"></span>
+			<span class="m_scroll_arrows trei"></span>
+		</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	$(".greeting").click(function() {
+    	$("#english").stop(true, true);
+    	$("#english").toggle();
+    });
+});
+</script>
 </body>
 </html>
