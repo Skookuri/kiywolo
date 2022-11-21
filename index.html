@@ -262,6 +262,68 @@
   50%  { opacity: .5; }
   100% { opacity: 1; }
 }
+
+/*responsive stuff*/
+
+@media screen and (min-width: 271px) and (max-width: 340px) {
+  #history {
+    height: 200vh;
+  }
+}
+
+@media screen and (min-width: 341px) and (max-width: 375px) {
+  #history {
+    height: 180vh;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 424px) {
+  #history {
+    height: 160vh;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 500px) {
+  #history {
+    height: 155vh;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 525px) {
+  #history {
+    height: 150vh;
+  }
+}
+
+@media screen and (min-width: 526px) and (max-width: 650px) {
+  #history {
+    height: 140vh;
+  }
+}
+
+@media screen and (min-width: 651px) and (max-width: 685px) {
+  #history {
+    height: 130vh;
+  }
+}
+
+@media screen and (min-width: 686px) and (max-width: 700px) {
+  #history {
+    height: 125vh;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+  #history {
+    height: 110vh;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #history {
+    height: 100vh;
+  }
+}
 </style>
 </head>
 <body>
@@ -297,7 +359,9 @@
 </div>
 </section>
 <section id="history">
-<h4 style="color: white; font-size: 70px; float: right;">
+<br>
+<h4 style="color: white; font-size: 70px; left: 50%">
+
   <p class="totranslate">
   <span>A</span>
   <span>long,</span>
@@ -347,7 +411,6 @@ var historyanimate = `
   		text-align: center;
   		transform: scale(0.94) translate(0%, 50%);
   		animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-        left: 50%;
 	}
 	
     @keyframes scale {
