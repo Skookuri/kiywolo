@@ -21,23 +21,6 @@
     	transform: translate(0%, 50%);
     }
     
-    
-	/*.default {
-    	animation: fadeInAnimation ease 3s;
-    	animation-iteration-count: 1;
-    	animation-fill-mode: forwards;
-	}
-  
-	@keyframes fadeInAnimation {
-    	0% {
-        	opacity: 0;
-    	}
-        
-    	100% {
-        	opacity: 1;
-     	}
-	}*/
-    
     a {
     	color: #203c34;
         padding: 10px;
@@ -364,8 +347,9 @@ var historyanimate = `
   		font-family: "Montserrat Medium";
   		max-width: 40ch;
   		text-align: center;
-  		transform: scale(0.94);
+  		transform: scale(0.94) translate(0%, 50%);
   		animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+        left: 50%;
 	}
 	
     @keyframes scale {
