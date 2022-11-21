@@ -7,8 +7,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <style>
+	html {
+  		scroll-behavior: smooth;
+	}
+    
 	body {
-    	background-color: white;
     	color: #203c34;
     }
     
@@ -19,7 +22,7 @@
     }
     
     
-	.default {
+	/*.default {
     	animation: fadeInAnimation ease 3s;
     	animation-iteration-count: 1;
     	animation-fill-mode: forwards;
@@ -33,10 +36,11 @@
     	100% {
         	opacity: 1;
      	}
-	}
+	}*/
     
     a {
     	color: #203c34;
+        padding: 10px;
     }
     
     .topBar {
@@ -46,11 +50,8 @@
     	color: #ffffff;
 	}
     
-    a {
-    	padding: 10px;
-    }
 
-	.topBar a:hover {
+	a:hover {
     	color: #522c8a;
     	transition: 0.4s;
         text-shadow: 0 0 30px #ffff;
@@ -67,7 +68,7 @@
         transition: 0.4s;
     }
     
-    #translated {
+    .translated {
     	display: none;
         color: #ffcb21;
         font-style: italic;
@@ -87,6 +88,7 @@
     
     section {
     	width: 100%;
+        
         float: left;
         box-sizing: border-box;
         height: 100vh;
@@ -282,21 +284,22 @@
 </style>
 </head>
 <body>
+<section id="home">
 <h2>
 <div class="topBar">
-	<a href= "home.html" style="text-decoration: none; font-size: 50px;" class = "page" >Kiywolo</a>
-    <a href= "home.html" style="text-decoration: none;" class = "page active" >Home</a>
-	<a href= "history.html" style="text-decoration: none;" class = "page" >History</a>
-	<a href= "dialects.html" style="text-decoration: none;" class = "page" >Dialects</a>
-	<a href= "learn.html" style="text-decoration: none;" class = "page" >Learn</a>
-	<a href= "team.html" style="text-decoration: none;" class = "page" >Team</a>
+	<a href= "#home" style="text-decoration: none; font-size: 50px;" class = "page" >Kiywolo</a>
+    <a href= "#home" style="text-decoration: none;" class = "page active" >Home</a>
+	<a href= "#history" style="text-decoration: none;" class = "page" >History</a>
+	<a href= "#dialects" style="text-decoration: none;" class = "page" >Dialects</a>
+	<a href= "#learn" style="text-decoration: none;" class = "page" >Learn</a>
+	<a href= "#team" style="text-decoration: none;" class = "page" >Team</a>
 </div>
 </h2>
 
-<section id="home">
+
 <div class="greeting">
 <h1 style="font-size: 100px;" class="content default totranslate">Welawaki!</h1>
-<h1 class="content" id="translated">Hello!</h1>
+<h1 class="content translated">Hello!</h1>
 </div>
 <h2 style="font-size: 40px;" class="content default">Welcome to Kiy.</h2>
 
@@ -326,7 +329,7 @@
   <span>Sizhia</span>
   <span>...</span>
   </p>
-  <p id="translated" style="font-size: 30px; width: 400px;">Kishaala, Kishaala Zalawagaiy Sizhia [ni/de]... </p>
+  <p class="translated" style="font-size: 30px; width: 400px;">Kishaala, Kishaala Zalawagaiy Sizhia [ni/de]... </p>
   <!--<span>you</span>
   <span>place</span>
   <span>on</span>
@@ -335,18 +338,18 @@
   <span>thinking.</span>-->
   <span style="font-size: 30px; font-weight: normal;">
   	<p class="totranslate">The empire of Kiy was born, and with it, came Kiywolo.</p>
-    <p id="translated" style="width: 400px;">Kiy ikishalo, y [with it] i'alo Kiywolo.</p>
+    <p class="translated" style="width: 400px;">Kiy ikishalo, y [with it] i'alo Kiywolo.</p>
     <p class="totranslate">Spoken within the Kingdom of Kiy, Kingdom of Zakhiy, Kingdom of Lashikiy, and the Ziy Region, Kiywolo is the official language throughout the land.</p>
-    <p id="translated">ee</p>
+    <p class="translated">ee</p>
     <p class="totranslate">It was created by Ki, the god-emperor and unifier of the empire.</p>
-    <p id="translated">ee</p>
+    <p class="translated">ee</p>
     <p class="totranslate">The language is now spoken by millions.</p>
-    <p id="translated">ee</p>
+    <p class="translated">ee</p>
     <p class="totranslate">The standard dialect taught is Kisha Kiywolo, or "Old Kiywolo".</p>
-    <p id="translated">ee</p>
+    <p class="translated">ee</p>
     
-    <p style="font-style: italic; font-size: 25px;">Click on each sentence above to see the Kiywolo translation!</p>
-    <p style="font-style: italic; font-size: 25px;">Next: Dialects</p>
+    <p style="font-style: italic; font-size: 25px; color:#ffcb21;">Click on each sentence above to see the Kiywolo translation!</p>
+    <p style="font-style: italic; font-size: 25px;"><a href="#dialects" style="color: #ffcb21; text-decoration: none;">Next: Dialects</a></p>
   </span>
 </h4>
 </section>
@@ -457,25 +460,27 @@ span:nth-child(18) {
 	}
 `
 $(document).ready(function() {
-	$("h4").hide();
+	$(".default").hide();
+    $(".default").fadeIn(2200);
+    $("h4").hide();
     
     $(".totranslate").click(function() {
     	$(this).next().stop(true, true);
     	$(this).next().slideToggle();
     });
     
-    $(document).scroll(function () {
-        $('section').each(function () {
-        	if ($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
-                if ($(this).is("#history")) {
-                	var historystyle = document.createElement("style");
-                    historystyle.innerText = historyanimate;
-                    document.head.appendChild(historystyle);
-                    $("h4").show();
-                }
-            }
-        });
-    });
+    $(document).scroll(function() {
+  		var y = $(this).scrollTop();
+  		if (y > 800) {
+    		var historystyle = document.createElement("style");
+            historystyle.innerText = historyanimate;
+            document.head.appendChild(historystyle);
+            $('h4').fadeIn();
+  		} else {
+    		$('h4').fadeOut();
+            $(".translated").hide();
+  		}
+	});
 });
 </script>
 </body>
